@@ -51,7 +51,7 @@ kubectl get services
 ```
 
 ### 4. Testing Services
-A. Port-forward Service
+- A. Port-forward Service
 ```bash
 kubectl port-forward svc/servicename PORT:SVC PORT
 ```
@@ -66,7 +66,7 @@ kubectl port-forward svc/gateway-service 3003:3003
 ```
 open your browser and hit "http://localhost:3003/"
 
-B. Inter-service Communication (Inside Pod)
+- B. Inter-service Communication (Inside Pod)
 ```bash
 kubectl exec -it <some-pod-name> -- sh
 curl http://user-service:3000/health
@@ -89,16 +89,16 @@ http://microservices.local/api/users
 ```
 ---
 
-## Troubleshooting Tips
-Pod CrashLoopBackOff: Check logs with kubectl logs <pod-name><br>
-Image Pull Error: Ensure your image name is correct and pushed to Docker Hub<br>
-Service Unreachable: Verify correct port and service name in your requests<br>
+## Troubleshooting Tips<br>
+- Pod CrashLoopBackOff: Check logs with kubectl logs <pod-name><br>
+- Image Pull Error: Ensure your image name is correct and pushed to Docker Hub<br>
+- Service Unreachable: Verify correct port and service name in your requests<br>
 ---
 
 ## Screenshots
-Docker images snapshot<br>
+- Docker images snapshot<br>
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
-Minikube running snapshot<br>
+- Minikube running snapshot<br>
 <img width="746" alt="image" src="https://github.com/user-attachments/assets/2da2071a-4255-4846-b92c-b9714454634a" /><br>
 
 ---
