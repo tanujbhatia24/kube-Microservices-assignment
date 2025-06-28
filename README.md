@@ -1,50 +1,22 @@
 # Microservices Deployment on Kubernetes with Minikube
-
 This project demonstrates how to deploy a microservices-based Node.js application using Kubernetes and Minikube. The application includes the following services:
 
 - **User Service** (Port 3000)
 - **Product Service** (Port 3001)
 - **Order Service** (Port 3002)
 - **Gateway Service** (Port 3003)
-
 ---
 
 ## Prerequisites
-
 - Docker
 - Minikube
 - kubectl
 - Docker Hub account (or another container registry)
-
 ---
 
-## Project Structure
-kube-Mincroservices-assignment/
-├── Microservices/
-│   ├── user-service/
-│   ├── product-service/
-│   ├── order-service/
-│   └── gateway-service/
-├── deployments/
-│   ├── user-deploy.yaml
-│   ├── product-deploy.yaml
-│   ├── order-deploy.yaml
-│   └── gateway-deploy.yaml
-├── services/
-│   ├── user-service.yaml
-│   ├── product-service.yaml
-│   ├── order-service.yaml
-│   └── gateway-service.yaml
-├── ingress/              # Optional
-│   └── ingress.yaml
-└── README.md
-
 ## Step-by-Step Instructions
-
 ### 1. Build & Push Docker Images
-
 For each microservice (`user-service`, `product-service`, `order-service`, `gateway-service`), navigate to the folder and run:
-
 ```bash
 docker build -t your-dockerhub-username/<service-name>:latest .
 docker push your-dockerhub-username/<service-name>:latest
@@ -77,6 +49,7 @@ Check status:
 kubectl get pods
 kubectl get services
 ```
+
 ### 4. Testing Services
 A. Port-forward Service
 ```bash
@@ -99,6 +72,7 @@ kubectl exec -it <some-pod-name> -- sh
 curl http://user-service:3000/health
 curl http://product-service:3001/health
 ```
+
 ### 5. (Optional) Ingress Setup
 If you attempted the bonus task:
 ```bash
@@ -113,22 +87,22 @@ Test
 ```bash
 http://microservices.local/api/users
 ```
+---
 
 ## Troubleshooting Tips
 Pod CrashLoopBackOff: Check logs with kubectl logs <pod-name>
 Image Pull Error: Ensure your image name is correct and pushed to Docker Hub
 Service Unreachable: Verify correct port and service name in your requests
+---
 
 ## Screenshots
 Docker Images<br>
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
 
 
-
-pods.png - output of kubectl get pods
-logs.png - logs showing inter-service communication
-service-test.png - test result via port-forward or ingress
+---
 
 ## Author & Credits
 Assignment by Tanuj Bhatia
 Container registry: tanujbhatia24
+---
