@@ -120,7 +120,10 @@ Image Pull Error: Ensure your image name is correct and pushed to Docker Hub
 Service Unreachable: Verify correct port and service name in your requests
 
 ## Screenshots
-Screenshots are located in the screenshots/ folder:
+Docker Images<br>
+<img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
+
+
 
 pods.png - output of kubectl get pods
 logs.png - logs showing inter-service communication
