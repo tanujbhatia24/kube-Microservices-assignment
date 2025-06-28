@@ -96,9 +96,10 @@ Service Unreachable: Verify correct port and service name in your requests
 ---
 
 ## Screenshots
-Docker Images<br>
+Docker images snapshot<br>
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
-
+Minikube running snapshot<br>
+<img width="746" alt="image" src="https://github.com/user-attachments/assets/2da2071a-4255-4846-b92c-b9714454634a" /><br>
 
 ---
 
