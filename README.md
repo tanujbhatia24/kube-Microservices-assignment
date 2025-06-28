@@ -100,7 +100,11 @@ http://microservices.local/api/users
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
 - Minikube running snapshot<br>
 <img width="746" alt="image" src="https://github.com/user-attachments/assets/2da2071a-4255-4846-b92c-b9714454634a" /><br>
-
+- Applying deployment snapshot<br>
+<img width="376" alt="image" src="https://github.com/user-attachments/assets/927780c9-8a59-449c-b94d-0f8a56e41248" /><br>
+- Applying services snapshot<br>
+<img width="349" alt="image" src="https://github.com/user-attachments/assets/040694c8-882c-4871-bb39-dc03b304f245" /><br>
+- 
 ---
 
 ## Author & Credits
