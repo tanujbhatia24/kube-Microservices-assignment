@@ -1,147 +1,131 @@
-# Microservices Dockerization Project
+# Microservices Deployment on Kubernetes with Minikube
 
-This project contains Dockerized Node.js microservices orchestrated with Docker Compose. It includes:
+This project demonstrates how to deploy a microservices-based Node.js application using Kubernetes and Minikube. The application includes the following services:
 
-- **User Service** (Port `3000`)
-- **Product Service** (Port `3001`)
-- **Order Service** (Port `3002`)
-- **Gateway Service** (Port `3003`)
+- **User Service** (Port 3000)
+- **Product Service** (Port 3001)
+- **Order Service** (Port 3002)
+- **Gateway Service** (Port 3003)
+
+---
+
+## Prerequisites
+
+- Docker
+- Minikube
+- kubectl
+- Docker Hub account (or another container registry)
 
 ---
 
 ## Project Structure
-```
-Microservices
-├── user-service/
-│ └── Dockerfile
-├── product-service/
-│ └── Dockerfile
-├── order-service/
-│ └── Dockerfile
-├── gateway-service/
-│ └── Dockerfile
-├── docker-compose.yml
+kube-Mincroservices-assignment/
+├── Microservices/
+│   ├── user-service/
+│   ├── product-service/
+│   ├── order-service/
+│   └── gateway-service/
+├── deployments/
+│   ├── user-deploy.yaml
+│   ├── product-deploy.yaml
+│   ├── order-deploy.yaml
+│   └── gateway-deploy.yaml
+├── services/
+│   ├── user-service.yaml
+│   ├── product-service.yaml
+│   ├── order-service.yaml
+│   └── gateway-service.yaml
+├── ingress/              # Optional
+│   └── ingress.yaml
 └── README.md
-└── READMEinitial.md
-```
----
 
-## Setup Instructions
+## Step-by-Step Instructions
 
-### 1. Clone the Repository.
+### 1. Build & Push Docker Images
+
+For each microservice (`user-service`, `product-service`, `order-service`, `gateway-service`), navigate to the folder and run:
 
 ```bash
-git clone <your-forked-repo-url>
+docker build -t your-dockerhub-username/<service-name>:latest .
+docker push your-dockerhub-username/<service-name>:latest
 ```
-### 2. You need to fix the package.json with below code.
-Troubleshoot - there's no scripts section, so when Docker runs npm start, it doesn't know what to do.
+Example:
 ```bash
-{
-  "name": "microservice",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "axios": "^0.24.0"
-  }
-}
+cd user-service
+docker build -t your-dockerhub-username/user-service:latest .
+docker push your-dockerhub-username/user-service:latest
 ```
+Repeat for each service.
 
-### 3. Create Dockerfile for each micorservice individually. Use below for your reference.
+### 2. Start Minikube
 ```bash
-FROM node:22
-WORKDIR /app
-COPY package.json .
-RUN npm install
-COPY . .
-EXPOSE 3002
-CMD [ "npm", "start" ]
+minikube start --memory=4096 --cpus=2
 ```
-
-### 4. Build and Run the images individually for each microservice.
+(Optional for Ingress):
 ```bash
-
-#For User Service
-docker build . -t users-service:v1.0
-docker run -d -p 3000:3000 users-service:v1.0
-
-#For Products Service
-docker build . -t product-service:v1.0
-docker run -d -p 3001:3001 products-service:v1.0
-
-#For Orders Service
-docker build . -t order-service:v1.0
-docker run -d -p 3002:3002 orders-service:v1.0
-
-#For Gateway Service
-docker build . -t gateway-service:v1.0
-docker run -d -p 3003:3003 gateway-service:v1.0
+minikube addons enable ingress
 ```
 
-### 5. Create docker-compose.yml file. Use below for your reference.
+### 3. Deploy Services and Deployments
+From the root directory:
 ```bash
-version: '3.8'
-
-services:
-  users-service:
-    build: ./user-service
-    container_name: users-service_container
-    ports:
-      - '3000:3000'
-
-  products-service:
-    build: ./product-service
-    container_name: products-service_container
-    ports:
-      - '3001:3001'
-
-  orders-service:
-    build: ./order-service
-    container_name: orders-service_container
-    ports:
-      - '3002:3002'
-    depends_on:
-      - users-service
-
-  gateway-service:
-    build: ./gateway-service
-    container_name: gateway-service_container
-    ports:
-      - '3003:3003'
-
-networks:
-  default:
-    name: microservice-network
+kubectl apply -f deployments/
+kubectl apply -f services/
 ```
-
-### 6. Build and Run the image docker-compose.
+Check status:
 ```bash
-docker compose build
-docker compose up -d
+kubectl get pods
+kubectl get services
+```
+### 4. Testing Services
+A. Port-forward Service
+```bash
+kubectl port-forward svc/servicename PORT:SVC PORT
+```
+Then open your browser:
+```bash
+http://localhost:PORT/
+```
+EXAMPLE
+Gateway Service
+```bash
+kubectl port-forward svc/gateway-service 3003:3003
+```
+open your browser and hit "http://localhost:3003/"
+
+B. Inter-service Communication (Inside Pod)
+```bash
+kubectl exec -it <some-pod-name> -- sh
+curl http://user-service:3000/health
+curl http://product-service:3001/health
+```
+### 5. (Optional) Ingress Setup
+If you attempted the bonus task:
+```bash
+kubectl apply -f ingress/
+minikube tunnel
+```
+Then add this to your /etc/hosts file:
+```bash
+127.0.0.1 microservices.local
+```
+Test
+```bash
+http://microservices.local/api/users
 ```
 
-## Valdation Snapshots.
+## Troubleshooting Tips
+Pod CrashLoopBackOff: Check logs with kubectl logs <pod-name>
+Image Pull Error: Ensure your image name is correct and pushed to Docker Hub
+Service Unreachable: Verify correct port and service name in your requests
 
-1. Docker Individual image each microservice.<br>
-![image](https://github.com/user-attachments/assets/772ff546-a35a-47e0-951c-26447b7fe7f4)<br>
+## Screenshots
+Screenshots are located in the screenshots/ folder:
 
-2. Docker-Compose image & container for combine microservice.<br>
-![image](https://github.com/user-attachments/assets/7ae3d8d4-54d8-482c-95a4-109cf8d75554)<br>
-![image](https://github.com/user-attachments/assets/f681b319-74ed-4d97-bffa-2d4a4b8d277f)<br>
+pods.png - output of kubectl get pods
+logs.png - logs showing inter-service communication
+service-test.png - test result via port-forward or ingress
 
-3. users-service<br>
-![image](https://github.com/user-attachments/assets/47fccb13-80e2-4d8e-aae7-94209538706f)<br>
-
-4. products-service<br>
-![image](https://github.com/user-attachments/assets/959217ac-59e5-4aa2-a1fb-076df4ceff3c)<br>
-
-5. orders-service<br>
-![image](https://github.com/user-attachments/assets/1ff0501c-9ae2-4d90-9691-a8bd78939050)<br>
-![image](https://github.com/user-attachments/assets/5d85c45d-dd19-4ad8-a948-96c69a9a156e)<br>
-
-6. gateway-service<br>
-![image](https://github.com/user-attachments/assets/a2e9e9e1-6be7-4bfe-8cba-9e8ea6999a19)<br>
-
-
+## Author & Credits
+Assignment by Tanuj Bhatia
+Container registry: tanujbhatia24
