@@ -15,21 +15,34 @@ This project demonstrates how to deploy a microservices-based Node.js applicatio
 ---
 
 ## Step-by-Step Instructions
-### 1. Build & Push Docker Images
+### 1. Create Dockerfile for each micorservice individually. Use below for your reference.
+```bash
+FROM node:22
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+EXPOSE 3002
+CMD [ "npm", "start" ]
+```
+Repeat for each service.
+
+### 2. Build & Push Docker Images
 For each microservice (`user-service`, `product-service`, `order-service`, `gateway-service`), navigate to the folder and run:
 ```bash
+cd kube-Microservices-assignment/Microservices/<service-folder>
 docker build -t your-dockerhub-username/<service-name>:latest .
 docker push your-dockerhub-username/<service-name>:latest
 ```
 Example:
 ```bash
-cd user-service
+cd kube-Microservices-assignment/Microservices/user-service
 docker build -t your-dockerhub-username/user-service:latest .
 docker push your-dockerhub-username/user-service:latest
 ```
 Repeat for each service.
 
-### 2. Start Minikube
+### 3. Start Minikube
 ```bash
 minikube start
 ```
@@ -38,9 +51,10 @@ minikube start
 minikube addons enable ingress
 ```
 
-### 3. Deploy Services and Deployments
+### 4. Deploy Services and Deployments
 From the root directory:
 ```bash
+cd kube-Microservices-assignment/
 kubectl apply -f deployments/
 kubectl apply -f services/
 ```
@@ -50,7 +64,7 @@ kubectl get pods
 kubectl get services
 ```
 
-### 4. Testing Services
+### 5. Testing Services
 - A. Port-forward Service
 ```bash
 kubectl port-forward svc/servicename PORT:SVCPORT
@@ -73,7 +87,7 @@ curl http://user-service:3000/health
 curl http://product-service:3001/health
 ```
 
-### 5. (Optional) Ingress Setup
+### 6. (Optional) Ingress Setup
 If you attempted the bonus task:
 ```bash
 kubectl apply -f ingress/
