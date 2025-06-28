@@ -90,9 +90,9 @@ http://microservices.local/api/users
 ---
 
 ## Troubleshooting Tips
-Pod CrashLoopBackOff: Check logs with kubectl logs <pod-name>
-Image Pull Error: Ensure your image name is correct and pushed to Docker Hub
-Service Unreachable: Verify correct port and service name in your requests
+Pod CrashLoopBackOff: Check logs with kubectl logs <pod-name><br>
+Image Pull Error: Ensure your image name is correct and pushed to Docker Hub<br>
+Service Unreachable: Verify correct port and service name in your requests<br>
 ---
 
 ## Screenshots
