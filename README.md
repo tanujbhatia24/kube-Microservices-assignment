@@ -124,6 +124,6 @@ http://microservices.local/api/users
 ---
 
 ## Author & Credits
-Assignment by Tanuj Bhatia
-Container registry: tanujbhatia24
+- Assignment by Tanuj Bhatia<br>
+- Container registry: tanujbhatia24
 ---
