@@ -31,7 +31,7 @@ Repeat for each service.
 
 ### 2. Start Minikube
 ```bash
-minikube start --memory=4096 --cpus=2
+minikube start
 ```
 (Optional for Ingress):
 ```bash
@@ -53,7 +53,7 @@ kubectl get services
 ### 4. Testing Services
 - A. Port-forward Service
 ```bash
-kubectl port-forward svc/servicename PORT:SVC PORT
+kubectl port-forward svc/servicename PORT:SVCPORT
 ```
 Then open your browser:
 ```bash
@@ -104,7 +104,9 @@ http://microservices.local/api/users
 <img width="376" alt="image" src="https://github.com/user-attachments/assets/927780c9-8a59-449c-b94d-0f8a56e41248" /><br>
 - Applying services snapshot<br>
 <img width="349" alt="image" src="https://github.com/user-attachments/assets/040694c8-882c-4871-bb39-dc03b304f245" /><br>
-- 
+- kubectl services status snapshot<br>
+<img width="389" alt="image" src="https://github.com/user-attachments/assets/0e143b5c-ae11-4d97-a4a5-27b9445ebeb5" /><br>
+- kubectl pods status snapshot<br>
 ---
 
 ## Author & Credits
