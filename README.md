@@ -30,13 +30,13 @@ Repeat for each service.
 ### 2. Build & Push Docker Images
 For each microservice (`user-service`, `product-service`, `order-service`, `gateway-service`), navigate to the folder and run:
 ```bash
-cd kube-Microservices-assignment/Microservices/<service-folder>
-docker build -t your-dockerhub-username/<service-name>:latest .
+cd .\Microservices\<service-folder>
+docker build -t your-dockerhub-username\<service-name>:latest .
 docker push your-dockerhub-username/<service-name>:latest
 ```
 Example:
 ```bash
-cd kube-Microservices-assignment/Microservices/user-service
+cd .\Microservices\user-service
 docker build -t your-dockerhub-username/user-service:latest .
 docker push your-dockerhub-username/user-service:latest
 ```
@@ -54,7 +54,6 @@ minikube addons enable ingress
 ### 4. Deploy Services and Deployments
 From the root directory:
 ```bash
-cd kube-Microservices-assignment/
 kubectl apply -f deployments/
 kubectl apply -f services/
 ```
@@ -111,7 +110,7 @@ http://microservices.local/api/users
 
 ## Screenshots
 - Docker images snapshot<br>
-<img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/cf6f0901-0084-4b4d-9575-2ca0fe924fd8" /><br>
 - Minikube running snapshot<br>
 <img width="746" alt="image" src="https://github.com/user-attachments/assets/2da2071a-4255-4846-b92c-b9714454634a" /><br>
 - Applying deployment snapshot<br>
@@ -119,11 +118,24 @@ http://microservices.local/api/users
 - Applying services snapshot<br>
 <img width="349" alt="image" src="https://github.com/user-attachments/assets/040694c8-882c-4871-bb39-dc03b304f245" /><br>
 - kubectl services status snapshot<br>
-<img width="389" alt="image" src="https://github.com/user-attachments/assets/0e143b5c-ae11-4d97-a4a5-27b9445ebeb5" /><br>
+<img width="368" alt="image" src="https://github.com/user-attachments/assets/29885cb6-76b7-43e3-9bbd-1295a4cafd2b" /><br>
 - kubectl pods status snapshot<br>
+![image](https://github.com/user-attachments/assets/6c759d3c-dbbc-4f31-a2b1-213d184efa30)<br>
+- product service snaphsot<br>
+<img width="384" alt="image" src="https://github.com/user-attachments/assets/00876c46-4e12-46c7-a6d5-b1d60fc69a8c" /><br>
+![image](https://github.com/user-attachments/assets/84aa3374-79ad-4a58-abe4-cdc2f1362de7)<br>
+- user service snaphsot<br>
+<img width="407" alt="image" src="https://github.com/user-attachments/assets/8d751267-9b8c-45d3-b53f-25891d8bbc46" /><br>
+<img width="464" alt="image" src="https://github.com/user-attachments/assets/29b6a93f-6a61-4128-a7cb-d6f5331698cd" /><br>
+- gateway service snaphsot<br>
+![image](https://github.com/user-attachments/assets/e0ad6740-7b81-4358-b6f5-4f4d1ff3c551)<br>
+![image](https://github.com/user-attachments/assets/f7f69de1-5aaa-41b5-876d-bdeccdd61d20)<br>
+- order service snaphsot<br>
+![image](https://github.com/user-attachments/assets/517f7f87-673d-473b-a238-b74a56ba1850)<br>
+![image](https://github.com/user-attachments/assets/c80d58e8-f394-4538-be71-2eebad732daa)<br>
 ---
 
 ## Author & Credits
-Assignment by Tanuj Bhatia
-Container registry: tanujbhatia24
+- Assignment by Tanuj Bhatia<br>
+- Container registry: tanujbhatia24
 ---
