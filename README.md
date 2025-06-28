@@ -120,6 +120,11 @@ http://microservices.local/api/users
 - kubectl services status snapshot<br>
 <img width="368" alt="image" src="https://github.com/user-attachments/assets/29885cb6-76b7-43e3-9bbd-1295a4cafd2b" /><br>
 - kubectl pods status snapshot<br>
+- product service snaphsot<br>
+<img width="384" alt="image" src="https://github.com/user-attachments/assets/00876c46-4e12-46c7-a6d5-b1d60fc69a8c" /><br>
+- user service snaphsot<br>
+- gateway service snaphsot<br>
+- order service snaphsot<br>
 ---
 
 ## Author & Credits
