@@ -120,6 +120,7 @@ http://microservices.local/api/users
 - kubectl services status snapshot<br>
 <img width="368" alt="image" src="https://github.com/user-attachments/assets/29885cb6-76b7-43e3-9bbd-1295a4cafd2b" /><br>
 - kubectl pods status snapshot<br>
+![image](https://github.com/user-attachments/assets/6c759d3c-dbbc-4f31-a2b1-213d184efa30)<br>
 - product service snaphsot<br>
 <img width="384" alt="image" src="https://github.com/user-attachments/assets/00876c46-4e12-46c7-a6d5-b1d60fc69a8c" /><br>
 ![image](https://github.com/user-attachments/assets/84aa3374-79ad-4a58-abe4-cdc2f1362de7)<br>
