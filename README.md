@@ -30,13 +30,13 @@ Repeat for each service.
 ### 2. Build & Push Docker Images
 For each microservice (`user-service`, `product-service`, `order-service`, `gateway-service`), navigate to the folder and run:
 ```bash
-cd kube-Microservices-assignment/Microservices/<service-folder>
-docker build -t your-dockerhub-username/<service-name>:latest .
+cd .\Microservices\<service-folder>
+docker build -t your-dockerhub-username\<service-name>:latest .
 docker push your-dockerhub-username/<service-name>:latest
 ```
 Example:
 ```bash
-cd kube-Microservices-assignment/Microservices/user-service
+cd .\Microservices\user-service
 docker build -t your-dockerhub-username/user-service:latest .
 docker push your-dockerhub-username/user-service:latest
 ```
@@ -54,7 +54,6 @@ minikube addons enable ingress
 ### 4. Deploy Services and Deployments
 From the root directory:
 ```bash
-cd kube-Microservices-assignment/
 kubectl apply -f deployments/
 kubectl apply -f services/
 ```
