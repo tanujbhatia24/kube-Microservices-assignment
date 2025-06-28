@@ -135,6 +135,9 @@ http://microservices.local/api/users
 ![image](https://github.com/user-attachments/assets/c80d58e8-f394-4538-be71-2eebad732daa)<br>
 - Inter-service Communication (Inside Pod) snapshot<br>
 ![image](https://github.com/user-attachments/assets/395f78ef-0857-487f-8340-615e3e996bb7)<br>
+- (Optional) Ingress Snapshot<br>
+![image](https://github.com/user-attachments/assets/3d45525b-d2f4-4e55-8ac4-ef37d0739cfc)<br>
+![image](https://github.com/user-attachments/assets/afa47776-ae81-456e-98a8-954b07370977)<br>
 ---
 
 ## Author & Credits
