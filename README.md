@@ -138,6 +138,10 @@ http://microservices.local/api/users
 - (Optional) Ingress Snapshot<br>
 ![image](https://github.com/user-attachments/assets/3d45525b-d2f4-4e55-8ac4-ef37d0739cfc)<br>
 ![image](https://github.com/user-attachments/assets/afa47776-ae81-456e-98a8-954b07370977)<br>
+![image](https://github.com/user-attachments/assets/91647b68-dbad-4aeb-ac5f-2b173cb0227a)<br>
+![image](https://github.com/user-attachments/assets/2f6ba8e2-7f18-4873-968d-8001a9843d64)<br>
+![image](https://github.com/user-attachments/assets/7a92b259-22d2-47ad-b9af-cc57bc259452)<br>
+![image](https://github.com/user-attachments/assets/0da9ff09-ac64-4065-bd61-5ddbc55aa549)<br>
 ---
 
 ## Author & Credits
