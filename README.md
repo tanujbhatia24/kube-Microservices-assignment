@@ -110,7 +110,7 @@ http://microservices.local/api/users
 
 ## Screenshots
 - Docker images snapshot<br>
-<img width="755" alt="image" src="https://github.com/user-attachments/assets/f45d4cee-0b35-44f0-afdd-0a71a9346ad5" /><br>
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/cf6f0901-0084-4b4d-9575-2ca0fe924fd8" /><br>
 - Minikube running snapshot<br>
 <img width="746" alt="image" src="https://github.com/user-attachments/assets/2da2071a-4255-4846-b92c-b9714454634a" /><br>
 - Applying deployment snapshot<br>
@@ -118,7 +118,7 @@ http://microservices.local/api/users
 - Applying services snapshot<br>
 <img width="349" alt="image" src="https://github.com/user-attachments/assets/040694c8-882c-4871-bb39-dc03b304f245" /><br>
 - kubectl services status snapshot<br>
-<img width="389" alt="image" src="https://github.com/user-attachments/assets/0e143b5c-ae11-4d97-a4a5-27b9445ebeb5" /><br>
+<img width="368" alt="image" src="https://github.com/user-attachments/assets/29885cb6-76b7-43e3-9bbd-1295a4cafd2b" /><br>
 - kubectl pods status snapshot<br>
 ---
 
