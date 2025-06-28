@@ -122,9 +122,16 @@ http://microservices.local/api/users
 - kubectl pods status snapshot<br>
 - product service snaphsot<br>
 <img width="384" alt="image" src="https://github.com/user-attachments/assets/00876c46-4e12-46c7-a6d5-b1d60fc69a8c" /><br>
+![image](https://github.com/user-attachments/assets/84aa3374-79ad-4a58-abe4-cdc2f1362de7)<br>
 - user service snaphsot<br>
+<img width="407" alt="image" src="https://github.com/user-attachments/assets/8d751267-9b8c-45d3-b53f-25891d8bbc46" /><br>
+<img width="464" alt="image" src="https://github.com/user-attachments/assets/29b6a93f-6a61-4128-a7cb-d6f5331698cd" /><br>
 - gateway service snaphsot<br>
+![image](https://github.com/user-attachments/assets/e0ad6740-7b81-4358-b6f5-4f4d1ff3c551)<br>
+![image](https://github.com/user-attachments/assets/f7f69de1-5aaa-41b5-876d-bdeccdd61d20)<br>
 - order service snaphsot<br>
+![image](https://github.com/user-attachments/assets/517f7f87-673d-473b-a238-b74a56ba1850)<br>
+![image](https://github.com/user-attachments/assets/c80d58e8-f394-4538-be71-2eebad732daa)<br>
 ---
 
 ## Author & Credits
